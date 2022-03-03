@@ -4,3 +4,9 @@ export function Journal(){
 
     };
 }
+
+// Entries Constructor
+export function Entry(title , body){
+    this.title = title;
+    this.body = body;
+}
