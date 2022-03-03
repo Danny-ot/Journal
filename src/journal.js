@@ -1,3 +1,4 @@
+
 // Journal Constructor
 export function Journal(){
     this.entries = {
@@ -18,10 +19,10 @@ Entry.prototype.countWord = function(){
     }
     let counter = 0;
     const wordArray = this.body.split(" ");
-    wordArray.forEach(function(word){
+    wordArray.forEach(function(){
         counter ++;
-    })
-    return counter
+    });
+    return counter;
 };
 
 // Method For Counting Vowels
@@ -37,7 +38,7 @@ Entry.prototype.countVowel = function(){
             counter ++;
             return counter;
         }
-    })
+    });
     return counter;
 };
 
@@ -46,7 +47,7 @@ Entry.prototype.countConsonant = function(){
     if(this.body.trim() === ""){
         return 0 ;
     }
-    const vowels = ['a' , 'e' , 'i' , 'o' , 'u'];
+    const vowels = ["a" , "e" , "i" , "O" , "u"];
     const letterArray = this.body.split("");
     let counter = 0;
     letterArray.forEach(function(elements){
@@ -56,8 +57,23 @@ Entry.prototype.countConsonant = function(){
             counter ++;
         }
 
-    })
+    });
     return counter;
-}
+};
 
+// Method For Getting Teaser
+Entry.prototype.getTeaser = function(){
+    if(this.body.trim() === ""){
+        return "" ;
+    }
+    const sentenceSplit = this.body.split(".");
+    let firstSentenceSplit = sentenceSplit[0].split(" ");
+    if(firstSentenceSplit.length > 8){
+         firstSentenceSplit = firstSentenceSplit.slice(0 , 9);
+    }
+    
+    let sentence = firstSentenceSplit.join(" ");
+    
+    return sentence.concat(".....");
+}
 
