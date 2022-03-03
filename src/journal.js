@@ -13,6 +13,20 @@ Journal.prototype.assignId = function () {
     return this.id;
 };
 
+// Method For Finding Entry
+Journal.prototype.findEntry = function(id){
+    if(this.entries[id] !== undefined){
+        return this.entries[id]
+    }
+    return false;
+}
+
+// Method For adding entry
+Journal.prototype.addEntry = function(entry){
+    entry.id = this.assignId();
+    this.entries[entry.id] = entry;
+};
+
 // Entries Constructor
 export function Entry(title, body) {
     this.title = title;
@@ -82,5 +96,5 @@ Entry.prototype.getTeaser = function () {
     let sentence = firstSentenceSplit.join(" ");
 
     return sentence.concat(".....");
-}
+};
 
