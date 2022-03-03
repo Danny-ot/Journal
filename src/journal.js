@@ -41,3 +41,23 @@ Entry.prototype.countVowel = function(){
     return counter;
 };
 
+// Method For Countimg Consonant
+Entry.prototype.countConsonant = function(){
+    if(this.body.trim() === ""){
+        return 0 ;
+    }
+    const vowels = ['a' , 'e' , 'i' , 'o' , 'u'];
+    const letterArray = this.body.split("");
+    let counter = 0;
+    letterArray.forEach(function(elements){
+        if(vowels.includes(elements.toLowerCase())){
+           return 0 ;
+        }else{
+            counter ++;
+        }
+
+    })
+    return counter;
+}
+
+
