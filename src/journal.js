@@ -90,7 +90,7 @@ Entry.prototype.getTeaser = function () {
     const sentenceSplit = this.body.split(".");
     let firstSentenceSplit = sentenceSplit[0].split(" ");
     if (firstSentenceSplit.length > 8) {
-        firstSentenceSplit = firstSentenceSplit.slice(0, 9);
+        firstSentenceSplit = firstSentenceSplit.slice(0, 8);
     }
 
     let sentence = firstSentenceSplit.join(" ");
