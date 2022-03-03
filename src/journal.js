@@ -13,13 +13,31 @@ export function Entry(title , body){
 
 // Method For Counting the word
 Entry.prototype.countWord = function(){
-    let counter = 0;
-    const wordArray = this.body.split(" ");
     if(this.body.trim() === ""){
         return 0 ;
     }
+    let counter = 0;
+    const wordArray = this.body.split(" ");
     wordArray.forEach(function(word){
         counter ++;
     })
     return counter
 };
+
+// Method For Counting Vowels
+Entry.prototype.countVowel = function(){
+    if(this.body.trim() === ""){
+        return 0 ;
+    }
+    const vowels = ['a' , 'e' , 'i' , 'o' , 'u'];
+    const letterArray = this.body.split("");
+    let counter = 0;
+    letterArray.forEach(function(elements){
+        if(vowels.includes(elements.toLowerCase())){
+            counter ++;
+            return counter;
+        }
+    })
+    return counter;
+};
+
