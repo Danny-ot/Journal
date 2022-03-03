@@ -95,6 +95,6 @@ Entry.prototype.getTeaser = function () {
 
     let sentence = firstSentenceSplit.join(" ");
 
-    return sentence.concat(".....");
+    return sentence.concat("................................");
 };
 
