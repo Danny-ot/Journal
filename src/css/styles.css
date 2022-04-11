@@ -1,0 +1,15 @@
+label{
+    font-size: large;
+    font-weight: bold;
+}
+
+#display-list p{
+    font-size: large;
+    cursor: pointer;
+}
+
+.counter{
+    font-weight: 600;
+    font-size: large;
+}
+
